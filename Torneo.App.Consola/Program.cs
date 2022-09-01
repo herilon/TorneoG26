@@ -4,6 +4,7 @@ namespace Torneo.App.Consola
 {
     class Program
     {
+        private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio();
 
         static void Main(string[] args)
         {
