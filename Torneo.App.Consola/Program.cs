@@ -6,6 +6,7 @@ namespace Torneo.App.Consola
     {
         private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio();
         private static IRepositorioDT _repoDT = new RepositorioDT();
+        private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
 
         static void Main(string[] args)
         {
@@ -14,6 +15,7 @@ namespace Torneo.App.Consola
             {
                 Console.WriteLine("1. Insertar Municipio");
                 Console.WriteLine("2. Insertar DT");
+                Console.WriteLine("3. Insertar Equipo");
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("Seleccione la opcion deseada");
                 opcion = Int32.Parse(Console.ReadLine());
@@ -24,6 +26,9 @@ namespace Torneo.App.Consola
                         break;
                     case 2:
                         AddDT();
+                        break;
+                    case 3:
+                        AddEquipo();
                         break;
                 }
             } while (opcion != 0);
@@ -55,6 +60,22 @@ namespace Torneo.App.Consola
                 Telefono = telefono,
             };
             _repoDT.AddDT(directorTecnico);
+        }
+
+        private static void AddEquipo()
+        {
+            Console.WriteLine("Ingrese el nombre del Equipo");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese el id del municipio");
+            int idMunicipio = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el id del DT");
+            int idDT = Int32.Parse(Console.ReadLine());
+
+            var equipo = new Equipo
+            {
+                Nombre = "Once Caldas",
+            };
+            _repoEquipo.AddEquipo(equipo, idMunicipio, idDT);
         }
     }
 }
