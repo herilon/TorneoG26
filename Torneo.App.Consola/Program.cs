@@ -16,6 +16,7 @@ namespace Torneo.App.Consola
                 Console.WriteLine("1. Insertar Municipio");
                 Console.WriteLine("2. Insertar DT");
                 Console.WriteLine("3. Insertar Equipo");
+                Console.WriteLine("4. Mostrar municipios");
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("Seleccione la opcion deseada");
                 opcion = Int32.Parse(Console.ReadLine());
@@ -29,6 +30,9 @@ namespace Torneo.App.Consola
                         break;
                     case 3:
                         AddEquipo();
+                        break;
+                    case 4:
+                        GetAllMunicipios();
                         break;
                 }
             } while (opcion != 0);
@@ -73,9 +77,17 @@ namespace Torneo.App.Consola
 
             var equipo = new Equipo
             {
-                Nombre = "Once Caldas",
+                Nombre = nombre,
             };
             _repoEquipo.AddEquipo(equipo, idMunicipio, idDT);
+        }
+
+        private static void GetAllMunicipios()
+        {
+            foreach (var municipio in _repoMunicipio.GetAllMunicipios())
+            {
+                Console.WriteLine(municipio.Id + " " + municipio.Nombre);
+            }
         }
     }
 }
