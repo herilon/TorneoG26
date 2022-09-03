@@ -1,0 +1,24 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Equipos.IndexModel
+@{
+}
+<h1>Listado de equipos</h1>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Municipio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var equipo in Model.equipos)
+        {
+            <tr>
+                <th scope="row">@equipo.Id</th>
+                <td>@equipo.Nombre</td>
+                <td>@equipo.Municipio.Nombre</td>
+            </tr>
+        }
+    </tbody>
+</table>
