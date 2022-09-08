@@ -1,0 +1,16 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Municipios.DetailsModel
+@{
+}
+<h1>Detalle del municipio</h1>
+<table class="table table-striped">
+    <tr>
+        <th scope="col">Id</th>
+        <td>@Model.municipio.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Nombre</th>
+        <td>@Model.municipio.Nombre</td>
+    </tr>
+</table>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>
