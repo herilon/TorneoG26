@@ -9,15 +9,21 @@
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Municipio</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var equipo in Model.equipos)
+        @foreach (var equipo in Model.equipos)
         {
             <tr>
                 <th scope="row">@equipo.Id</th>
                 <td>@equipo.Nombre</td>
                 <td>@equipo.Municipio.Nombre</td>
+                <td>
+                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@equipo.Id">
+                        Detalle
+                    </a>
+                </td>
             </tr>
         }
     </tbody>

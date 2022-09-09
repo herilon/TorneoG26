@@ -5,5 +5,6 @@ namespace Torneo.App.Persistencia
     {
         public Equipo AddEquipo(Equipo equipo, int idMunicipio, int idDT);
         public IEnumerable<Equipo> GetAllEquipos();
+        public Equipo GetEquipo(int idEquipo);
     }
 }
