@@ -1,0 +1,31 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Equipos.CreateModel
+@{
+}
+<h1>Nuevo equipo</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="equipo.Nombre"></label>
+        <input asp-for="equipo.Nombre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="idMunicipio">Municipio</label>
+        <select id="idMunicipio" name="idMunicipio" class="form-control">
+            @foreach (var municipio in Model.municipios)
+            {
+                <option value="@municipio.Id">@municipio.Nombre</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="idDT">D.T.</label>
+        <select id="idDT" name="idDT" class="form-control">
+            @foreach (var dt in Model.dts)
+            {
+                <option value="@dt.Id">@dt.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Crear equipo</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
