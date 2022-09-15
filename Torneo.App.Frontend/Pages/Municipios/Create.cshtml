@@ -7,6 +7,7 @@
     <div class="form-group">
         <label asp-for="municipio.Nombre"></label>
         <input asp-for="municipio.Nombre" class="form-control">
+        <span class="text-danger" asp-validation-for="municipio.Nombre"></span>
     </div>
     <button type="submit" class="btn btn-primary btn-block">Crear municipio</button>
 </form>
