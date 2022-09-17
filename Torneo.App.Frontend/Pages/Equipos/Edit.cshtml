@@ -1,0 +1,27 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Equipos.EditModel
+@{
+}
+<h1>Editar equipo</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="equipo.Id"></label>
+        <input asp-for="equipo.Id" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="equipo.Nombre"></label>
+        <input asp-for="equipo.Nombre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="MunicipioSelected"></label>
+        <select asp-for="MunicipioSelected" asp-items="@Model.MunicipioOptions" name="idMunicipio" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="DTSelected">D.T.</label>
+        <select asp-for="DTSelected" asp-items="@Model.DTOptions" name="idDT" class="form-control">
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Editar equipo</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
