@@ -22,15 +22,15 @@ namespace Torneo.App.Frontend.Pages.Municipios
 
         public IActionResult OnPost(Municipio municipio)
         {
-            if (ModelState.IsValid)
-            {
+//            if (ModelState.IsValid)
+//            {
                 _repoMunicipio.AddMunicipio(municipio);
                 return RedirectToPage("Index");
-            }
-            else
-            {
-                return Page();
-            }
+//            }
+//            else
+//            {
+//                return Page();
+//            }
         }
     }
 }

@@ -2,6 +2,13 @@
 @model Torneo.App.Frontend.Pages.Municipios.IndexModel
 @{
 }
+@if (Model.ErrorEliminar)
+{
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error</strong> No se pudo eliminar el Municipio.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+}
 <a class="btn btn-primary" asp-page="./Create">Crear municipio</a>
 <h1>Listado de municipios</h1>
 <table class="table table-dark table-hover">
@@ -25,6 +32,16 @@
                     <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@municipio.Id">
                         Editar
                     </a>
+                    @if (municipio.Equipos.Count == 0)
+                    {
+                        <form method="post" class="d-inline">
+                            <button asp-page-handler="Delete" asp-route-id="@municipio.Id"
+                                onclick="return confirm('Esta Seguro de eliminar el municipio?')"
+                                class="btn btn-danger">
+                                Delete
+                            </button>
+                        </form>
+                    }
                 </td>
             </tr>
         }
