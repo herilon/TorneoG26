@@ -9,7 +9,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 }
-<a class="btn btn-primary" asp-page="./Create">Crear municipio</a>
+@if (User.Identity.IsAuthenticated){
+    <a class="btn btn-primary" asp-page="./Create">Crear municipio</a>
+}
 <h1>Listado de municipios</h1>
 <table class="table table-dark table-hover">
     <thead>
