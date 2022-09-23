@@ -9,6 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("IdentityDataCo
     .AddEntityFrameworkStores<IdentityDataContext>();
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IRepositorioMunicipio, RepositorioMunicipio>();
 builder.Services.AddSingleton<IRepositorioDT, RepositorioDT>();
 builder.Services.AddSingleton<IRepositorioEquipo, RepositorioEquipo>();
